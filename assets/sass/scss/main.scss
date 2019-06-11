@@ -37,7 +37,8 @@
     background-color: #6D6F8C;
     border-radius: 10%;
     text-decoration: none;
-    padding-top: 0.7rem;
+    padding-top: 0.8rem;
+    text-transform: uppercase;
 }
 
 /*
@@ -51,25 +52,123 @@
     align-items: center;
     margin: 0 auto;
     width: 80%;
+
+    h2 {
+        padding: 2rem 0;
+        color: #6D6F8C;
+    }
 }
 
 .items {
-    display: flex;
-    align-items: center;
+  
     margin: 0 auto;
     width: 80%;
 
+    .item {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-around;
+        padding-bottom: 3rem;
+
+        img {
+            width: 25rem;
+        }
+    }
+
+    .item:nth-child(odd) {
+         flex-direction: row-reverse;
+    }
+
     .item_section {
         text-align: center;
-        margin: 0 auto;
-        width: 35%;
-        padding: 2rem 1rem; 
+        width: 50%;
+        padding: 2rem 2rem; 
         box-shadow: 0px 0px 40px 1px rgba(0,0,0,0.37);
         
         p {
-            padding: 1rem 0;
+            padding: 2rem 0;
             line-height: 1.2rem;
         }
+
+        a {
+            text-decoration: none;
+            background-color: #6D6F8C;
+            padding: 0.5rem 2rem;
+            text-transform: uppercase;
+            color: #fff;
+            border-radius: 10%;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+        }
+
+    }
+}
+
+/*
+    MAIN DETAILS
+*/
+
+.detail_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 60%;
+    padding: 2rem 0;
+}
+
+.gin_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+
+    img {
+        width: 25rem;
+    }
+
+    p {
+        padding: 1.5rem 0;
+    }
+
+    a {
+        text-decoration: none;
+        background-color: #6D6F8C;
+        padding: 0.5rem 2rem;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 10%;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1rem;
+    }
+}
+
+.similar_head {
+    padding: 2rem 0;
+}
+
+.similar_product {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    .similar_items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    a {
+        padding: 1rem 0;
+        text-decoration: none;
+    }
+
+    img {
+        width: 200px;
     }
 }
 

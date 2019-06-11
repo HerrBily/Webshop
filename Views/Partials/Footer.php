@@ -1,4 +1,3 @@
-</main>
 <footer>
         <section class="footer_section">
             <a href="#">
@@ -6,7 +5,7 @@
             </a>
             <ul class="footer_list">
                 <li>
-                    <a href="#" class="footer_link">Products</a>
+                    <a href="products" class="footer_link">Products</a>
                 </li>
                 <li>
                     <a href="#" class="footer_link">Combination</a>
@@ -15,7 +14,7 @@
                     <a href="#" class="footer_link">About Us</a>
                 </li>
                 <li>
-                    <a href="#" class="footer_link">Sign In</a>
+                    <a href="login" class="footer_link">Login</a>
                 </li>
             </ul>
             <section class="social_media_section">

@@ -35,7 +35,7 @@
                     commodi id doloremque libero necessitatibus? Quibusdam saepe harum minima corrupti corporis, labore
                     eaque voluptatibus porro in?
                 </p>
-                <a href="" class="button">Go to Shop</a>
+                <a href="products" class="button">Go to Shop</a>
             </div>
         </section>
 <?php require_once __DIR__ . '/../Partials/Footer.php'; ?>
