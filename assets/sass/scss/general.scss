@@ -1,0 +1,44 @@
+/*
+    ALLGEMEIN
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav_link,
+.footer_link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'PT Mono', monospace;
+    font-size: 2.5rem;
+    color: #fff;
+    padding: 8rem 0 8rem 0;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+}

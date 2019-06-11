@@ -1,0 +1,30 @@
+/*
+    HEADER
+*/
+
+header {
+    background-color: #6D6F8C;
+}
+
+nav {
+    padding-top: 1rem;
+
+    ul {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 50%; 
+    }
+
+}
+
+#logo {
+    width: 140px;
+}
+
+#svg_animation {
+    width: 30px;
+    height: 30px;
+}
+
