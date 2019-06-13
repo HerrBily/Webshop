@@ -6,7 +6,7 @@ class ProductController {
     public function show ($id) {
         $id = (int)$id;
 
-        $product = Product::find($id);
+        $product = Product::find($id); 
 
         $params = [
             'product' => $product

@@ -3,7 +3,7 @@
     <section class="detail_main"> 
         <section class="gin_container">
             <?php foreach ($product->images as $image): ?>
-                <img src="<?php echo "$base/Assets/$image"; ?>" alt="<?php echo $product->name; ?>">
+                <img src="<?php echo "$base/assets/$image"; ?>" alt="<?php echo $product->name; ?>">
             <?php endforeach; ?>
             
             <h3>
@@ -22,6 +22,14 @@
             
             <a href="cart/add/<?php echo $product->id; ?>">Add To Cart</a>
         </section>
-
+        <h4 class="similar_header">Similar Products</h4>
+        <section class="similar_product">
+            
+            <div class="similar_items">
+                <a href="products/show/<?php echo $product->id; ?>"><?php echo $product->name; ?></a>
+                <img src="<?php echo $base; ?>assets/<?php echo $product->images[0]; ?>" alt="">
+            </div>
+           
+        </section> 
     </section>
 <?php require_once __DIR__ . '/../Partials/Footer.php'; ?>

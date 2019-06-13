@@ -147,8 +147,10 @@
     }
 }
 
-.similar_head {
-    padding: 2rem 0;
+.similar_header {
+    padding-top: 2rem;
+    font-size: 1.3rem;
+    color: #6D6F8C;
 }
 
 .similar_product {
@@ -169,6 +171,124 @@
 
     img {
         width: 200px;
+    }
+}
+
+/*
+    CART MAIN
+*/
+.cart_cart {
+    min-height: calc(100vh - 20rem);
+}
+
+.cart_header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.cart_main {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 70%;
+
+
+
+    .cart_list {
+        font-family: 'Open Sans', sans-serif;
+        width: 70%;
+
+        .hidden {
+            visibility: hidden;
+        }
+        
+        .item_left {
+            text-align: left;
+        }
+        
+        img {
+            width: 100%;
+            padding: 0.5rem 0;
+        }
+        
+        th,
+        td {
+            text-align: left;
+            padding: 0 0.5rem;
+        }
+
+        th {
+            font-size: 1.2rem;
+            color: #6D6F8C;
+        }
+        
+        td {
+            vertical-align: middle;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        a {
+            text-decoration: none;
+
+        }
+    }
+}
+
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    background-color: gainsboro;
+    height: 20rem;
+    width: 18rem;
+
+    h3 {
+        padding: 2rem 0 2rem 2rem;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            padding-right: 1rem;
+            font-family: "Raleway", sans-serif;
+            font-size: 1rem;
+        }
+    }
+
+    p {
+        padding-bottom: 1.5rem;
+        padding-left: 2rem;
+    }
+
+    .total_border {
+        border-top: 1px solid #000;
+        padding-top: 0.5rem;
+    
+    }
+
+    // p:nth-child(odd) {
+    //     padding-bottom: 3.5rem;
+    //     border-top: 1px solid #000;
+    // }
+
+    a {
+        width: 8rem;
+        height: 3rem;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #6D6F8C;
+        border-radius: 10%;
+        text-decoration: none;
+        padding-top: 0.7rem;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 1rem;
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
     }
 }
 

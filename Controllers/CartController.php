@@ -6,6 +6,7 @@ class CartController
     public function list ()
     {
         $productIdsInCart = array_keys($_SESSION['cart']);
+        $shipping = 9;
 
         $products = [];
         if (count($productIdsInCart) > 0) {
@@ -18,10 +19,13 @@ class CartController
             $total = $total + $subtotal;
         }
         $total = round($total, 2);
+        $totalall = $total + $shipping;
 
         $params = [
             'products' => $products,
-            'total' => $total
+            'total' => $total,
+            'totalall' => $totalall,
+            'shipping' => $shipping
         ];
 
         View::load('cart', $params);

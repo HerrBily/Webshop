@@ -9,6 +9,7 @@ class Product
     public $description;
     public $images = [];
     public $deleted = 0;
+    public $image_small = [];
 
     public function fill ($dbResult)
     {
@@ -19,6 +20,7 @@ class Product
         $this->stock = $dbResult['stock'];
         $this->deleted = $dbResult['deleted'];
         $this->images = explode(',', $dbResult['images']);
+        $this->image_small = explode(',', $dbResult['image_small']);
     }
 
     public static function fillMultiple (array $dbResult)
@@ -82,22 +84,24 @@ class Product
         $images = implode(',', $this->images);
 
         if (isset($this->id) && !empty($this->id)) {
-            $db->query("UPDATE products SET name=?, price=?, stock=?, description=?, images=?, deleted=? WHERE id = ?", [
+            $db->query("UPDATE products SET name=?, price=?, stock=?, description=?, images=?, image_small=?, deleted=? WHERE id = ?", [
                 's:name' => $this->name,
                 'd:price' => $this->price,
                 'i:stock' => $this->stock,
                 's:description' => $this->description,
                 's:images' => $images,
                 'i:deleted' => $this->deleted,
+                's:image_small' => $this->image_small,
                 'i:id' => $this->id
             ]);
         } else {
-            $db->query("INSERT INTO products SET name=?, price=?, stock=?, description=?, images=?, deleted=0", [
+            $db->query("INSERT INTO products SET name=?, price=?, stock=?, description=?, images=?, image_small=? deleted=0", [
                 's:name' => $this->name,
                 'd:price' => $this->price,
                 'i:stock' => $this->stock,
                 's:description' => $this->description,
-                's:images' => $images
+                's:images' => $images,
+                's:image_small' => $this->image_small
             ]);
         }
     }
@@ -111,7 +115,7 @@ class Product
                 $_images[] = $image;
             } else {
                 if ($deleteFile === true) {
-                    $file = __DIR__ . "/../Assets/$image";
+                    $file = __DIR__ . "/../assets/$image";
                     unlink($file);
                 }
             }
