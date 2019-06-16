@@ -7,14 +7,27 @@ header {
 }
 
 nav {
-    padding-top: 1rem;
+    padding-top: 1rem; 
 
     ul {
         align-items: center;
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
-        width: 50%; 
+        width: 50%;
+    }
+
+    .logout {
+        text-align: right;
+        padding: 1rem 1rem 0.5rem 0;
+
+        p { 
+            color: #fff;
+        }
+
+        a {
+            border-bottom: 1px solid #fff;
+        }
     }
 
 }

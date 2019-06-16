@@ -55,11 +55,13 @@
                     <p>Total</p>
                     <span><?php echo sprintf('%.2f €', $totalall); ?></span>
                 </div>
-                <a>checkout</a>
+                <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true): ?>
+                    <a href="checkout/address">checkout</a>
+                <?php else: ?>
+                    <a href="login">checkout</a>
+                <?php endif; ?>
             </section>
         </section>
         <?php endif; ?>
-
-    </main>
-       
+    </main>       
 <?php require_once __DIR__ . '/../Partials/Footer.php'; ?>

@@ -20,3 +20,7 @@
         <?php endif; ?>
 
     </div> -->
+
+    <input type="hidden" name="_referer" value="<?php echo $_SERVER['HTTP_REFERER']; ?>">
+
+    Hallo, <?php echo LoginController::getEmailFromSession(); ?>

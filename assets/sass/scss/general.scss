@@ -10,6 +10,15 @@
 
 ul {
     list-style: none;
+    overflow: hidden;
+}
+
+a {
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    border-bottom: 1px solid #fff;
 }
 
 .nav_link,
@@ -41,4 +50,53 @@ h3 {
 p {
     font-family: 'Raleway', sans-serif;
     font-size: 1rem;
+}
+
+label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    
+}
+
+input {
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form_item {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-bottom: 1.5rem;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select:focus::-ms-value {
+    background-color: transparent;
+  }
+
+select {
+    cursor: pointer;
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    width: 15rem;  
+}
+
+button {
+    width: 8rem;
+    height: 3rem;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #6D6F8C;
+    border-radius: 10%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
 }
