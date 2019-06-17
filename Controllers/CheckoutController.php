@@ -43,8 +43,8 @@ class CheckoutController
                 $new_address->zip = trim($_POST['zip']);
                 $new_address->city = trim($_POST['city']);
                 $new_address->country = trim($country);
-                $new_address->user_id = $_SESSION['user_id'];
                 $new_address->name = trim($_POST['name']);
+                $new_address->user_id = $_SESSION['user_id'];
                 $new_address->save();
 
                 // adresse zu order speichern

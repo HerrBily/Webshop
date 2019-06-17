@@ -1,5 +1,6 @@
 <?php require_once __DIR__ . '/../../Partials/Admin/Header.php'; ?>
-
-<h1>Wilkommen im Admin-Panel</h1>
-
+</header>
+<main class="admin_admin">
+    <h1>Wilkommen im Admin-Panel</h1>
+</main>
 <?php require_once __DIR__ . '/../../Partials/Footer.php'; ?>

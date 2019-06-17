@@ -25,6 +25,10 @@ class Order
         return $this; // <-- haben wir überall anders noch nicht gemacht :D
     }
 
+    public function getProductsArray () {
+        return json_decode($this->products);
+    }
+
     public function save ()
     {
         $db = new DB();
@@ -48,6 +52,23 @@ class Order
                 's:products' => $this->products,
                 's:status' => $this->status
             ]);
+            $result = $db->query("SELECT * FROM orders ORDER BY id DESC LIMIT 1");
+            $this->fill($result[0]);
         }
+        return $this;
+    }
+
+    public static function find (int $id)
+    {
+        $db = new DB();
+
+        $result = $db->query('SELECT * FROM orders WHERE id = ?', [
+            'i:id' => $id
+        ]);
+
+        $o = new Order();
+        $o->fill($result[0]);
+
+        return $o;
     }
 }

@@ -6,12 +6,12 @@
                 <div class="items">
                     <?php foreach ($products as $product): ?>
                     <div class="item">
-                    <div class="item_section">
-                        <h3><?php echo $product->name; ?> - <?php echo $product->price ?> €</h3>
-                        <p><?php echo $product->description; ?></p>
-                        <a href="products/show/<?php echo $product->id; ?>">more</a>
-                    </div>
-                    <img src="<?php echo $base; ?>assets/<?php echo $product->images[0]; ?>">
+                        <div class="item_section">
+                            <h3><?php echo $product->name; ?> - <?php echo $product->price ?> €</h3>
+                            <p><?php echo $product->description; ?></p>
+                            <a href="products/show/<?php echo $product->id; ?>">more</a>
+                        </div>
+                        <img src="<?php echo $base; ?>assets/<?php echo $product->images[0]; ?>">
                     </div>
                     <?php endforeach; ?>
                 </div>

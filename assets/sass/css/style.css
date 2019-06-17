@@ -170,7 +170,7 @@ nav .logout a {
   font-size: 1rem;
   color: #fff;
   background-color: #6D6F8C;
-  border-radius: 10%;
+  border-radius: 0.5rem;
   text-decoration: none;
   padding-top: 0.8rem;
   text-transform: uppercase;
@@ -320,17 +320,16 @@ nav .logout a {
   text-align: left;
 }
 .cart_main .cart_list img {
-  width: 100%;
   padding: 0.5rem 0;
 }
 .cart_main .cart_list th,
 .cart_main .cart_list td {
-  text-align: left;
-  padding: 0 0.5rem;
+  text-align: center;
 }
 .cart_main .cart_list th {
   font-size: 1.2rem;
   color: #6D6F8C;
+  padding: 0 0.5rem;
 }
 .cart_main .cart_list td {
   vertical-align: middle;
@@ -375,7 +374,7 @@ nav .logout a {
   font-size: 1rem;
   color: #fff;
   background-color: #6D6F8C;
-  border-radius: 10%;
+  border-radius: 0.5rem;
   text-decoration: none;
   padding-top: 0.7rem;
   text-align: center;
@@ -446,6 +445,60 @@ nav .logout a {
 }
 .address_main .select_label {
   padding-bottom: 1rem;
+}
+
+/*
+    ADMIN
+*/
+.admin_admin {
+  min-height: calc(100vh - 20rem);
+}
+
+/*
+    ADMIN LIST
+*/
+.admin_list {
+  margin: 0 auto;
+  width: 80%;
+  padding-top: 3rem;
+}
+.admin_list .add_product {
+  text-align: center;
+}
+.admin_list .add_btn {
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background-color: #6D6F8C;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+}
+.admin_list .admin_item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 3rem 0;
+  width: 40%;
+  margin: 0 auto;
+}
+.admin_list .admin_item .admin_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.admin_list .admin_item .admin_container p {
+  font-size: 1.2rem;
+}
+.admin_list .admin_item .admin_container a {
+  text-decoration: none;
+}
+.admin_list .admin_item .admin_container a span {
+  color: #000;
+  font-family: "Raleway", sans-serif;
+  padding-left: 0.5rem;
 }
 
 /*

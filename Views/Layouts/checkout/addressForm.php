@@ -22,15 +22,15 @@
                 </div>
                 <div class="form_item">
                     <label for="street">Straße:</label>
-                    <input type="text" id="street" name="street">
+                    <input type="text" id="street" name="street" required>
                 </div>
                 <div class="form_item">
                     <label for="streetNr">Hausnummer:</label>
-                    <input type="text" id="streetNr" name="streetNr">
+                    <input type="text" id="streetNr" name="streetNr" required>
                 </div>
                 <div class="form_item">
                     <label for="door">Türnummer:</label>
-                    <input type="text" id="door" name="door">
+                    <input type="text" id="door" name="door" required>
                 </div>
                 <div class="form_item">
                     <label for="zip">PLZ:</label>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="form_item">
                     <label for="city">Stadt:</label>
-                    <input type="text" id="city" name="city">
+                    <input type="text" id="city" name="city" required>
                 </div>
                 <div class="form_item">
                     <label class="select_label" for="country">Land:</label>

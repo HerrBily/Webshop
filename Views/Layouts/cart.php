@@ -10,7 +10,7 @@
         <section class="cart_main">
                 <table class="cart_list">
                     <tr>
-                        <th>item</th>
+                        <th class="item_left">item</th>
                         <th class="hidden">name</th>
                         <th>unit price</th>
                         <th>quantity</th>
@@ -35,7 +35,11 @@
                     <?php echo $_SESSION['cart'][$product->id] * $product->price; ?>
                     </td>
                     <td>
-                    <a href="cart/remove/<?php echo $product->id; ?>">x</a>
+                    <a href="cart/remove/<?php echo $product->id; ?>">
+                    <svg width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path fill-rule="evenodd" clip-rule="evenodd" d="M15 1.42857H18.5714C19.3571 1.42857 20 2.07143 20 2.85714C20 3.64286 19.3571 4.28571 18.5714 4.28571H1.42857C0.642857 4.28571 0 3.64286 0 2.85714C0 2.07143 0.642857 1.42857 1.42857 1.42857H5L6.01429 0.414286C6.27143 0.157143 6.64286 0 7.01429 0H12.9857C13.3571 0 13.7286 0.157143 13.9857 0.414286L15 1.42857ZM4.28595 25.7143C2.71452 25.7143 1.4288 24.4286 1.4288 22.8571V8.57143C1.4288 7 2.71452 5.71429 4.28595 5.71429H15.7145C17.2859 5.71429 18.5717 7 18.5717 8.57143V22.8571C18.5717 24.4286 17.2859 25.7143 15.7145 25.7143H4.28595Z" fill="#6D6F8C"/>
+                     </svg>
+                    </a>
                     </td>
                     </tr>
                     <?php endforeach; ?>
