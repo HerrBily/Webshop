@@ -20,16 +20,7 @@
                 </div>
             <?php endif; ?>
             
-            <a href="cart/add/<?php echo $product->id; ?>">Add To Cart</a>
+            <a href="cart/add/<?php echo $product->id; ?>" class="btn_addto">Add To Cart</a>
         </section>
-        <h4 class="similar_header">Similar Products</h4>
-        <section class="similar_product">
-            
-            <div class="similar_items">
-                <a href="products/show/<?php echo $product->id; ?>"><?php echo $product->name; ?></a>
-                <img src="<?php echo $base; ?>assets/<?php echo $product->images[0]; ?>" alt="">
-            </div>
-           
-        </section> 
     </section>
 <?php require_once __DIR__ . '/../Partials/Footer.php'; ?>

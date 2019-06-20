@@ -8,8 +8,8 @@
         <?php foreach ($products as $product) : ?>
             <div class="order_summary">
             <div class="container_img">
-                <img src="<?php echo $base; ?>assets/<?php echo $product->image_small[0]; ?>">
-                <p><?php echo $product->name; ?></p><span>x<?php echo $product->id; ?></span>
+                <img src="<?php echo $base; ?>assets/<?php echo $product->images[0]; ?>">
+                <p><?php echo $product->name; ?></p><span>x<?php echo $_SESSION['cart'][$product->id]; ?></span>
             </div>
                 <p><?php echo $product->amount * $product->price; ?> €</p>
             </div>
@@ -60,7 +60,7 @@
             </div>
     </section>
 
-        <a href="checkout/place/<?php echo $order->id; ?>">zahlungspflichtig bestellen</a>
+        <a href="checkout/place/<?php echo $order->id; ?>" class="btn_order">order</a>
 
     </section>
     </main>

@@ -4,7 +4,7 @@
 
     <?php
     if (isset($error)) : ?>
-        <p class="error"><?php echo $error;?></p>;
+        <p class="error"><?php echo $error?></p>
     <?php
     endif;
     ?>
@@ -30,6 +30,6 @@
             <input type="password" id="password_repeat" name="password_repeat" required>
         </div>
 
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="btn_hover1">Sign Up</button>
     </form>
 <?php require_once __DIR__ . '/../Partials/Footer.php'; ?>

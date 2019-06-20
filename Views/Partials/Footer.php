@@ -59,5 +59,9 @@
             </section>
         </section>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.0/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.0/plugins/ScrollToPlugin.min.js"></script>
 </body>
 </html>

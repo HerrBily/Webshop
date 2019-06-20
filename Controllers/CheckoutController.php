@@ -9,6 +9,7 @@ class CheckoutController
         $order = new Order();
         $order->user_id = $_SESSION['user_id'];
         $order->products = json_encode($cart->products);
+        $order->total_price = $_SESSION['total_price'];
 
         if (isset($_POST['existing_address'])) { // Formular wurde abgeschickt
 
@@ -154,6 +155,8 @@ class CheckoutController
         $params = [
           'user' => $user
         ];
+
+        unset($_SESSION['cart']);
 
         View::load('checkout/thankyou', $params);
     }

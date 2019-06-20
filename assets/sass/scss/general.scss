@@ -96,7 +96,91 @@ button {
     border-radius: 10%;
     text-align: center;
     margin: 0 auto;
-    font-size: 1rem;
-    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
+    
 }
+
+.button:hover {background-color: #6D6F8C}
+
+.button:active {
+  background-color: #6D6F8C;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#back-to-top {
+
+    display: none;
+    position: fixed;
+    bottom: 4rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+
+  }
+  
+  #back-to-top:hover {
+    background-color: #fff;
+    color: #6D6F8C;
+  }
+
+
+  .btn_hover1:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388; 
+}
+
+.btn_addto:hover {
+    color: #fff;
+    border-radius: 50px;
+    background: #6D6F8C;
+    transition: all 0.3s ease 0s;
+}
+
+#sign_up:hover {
+    color: #fff;
+    background: #6D6F8C;
+    border-color: #000;
+    transition: all 0.4s ease 0s;
+    font-size: 1.2rem;
+    box-shadow: 0px 10px 51px 0px rgba(0,0,0,0.75);
+}
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		transform:         translateY(0)
+	}
+	40% {
+		transform:         translateY(-30px)
+	}
+	60% {
+		transform:         translateY(-15px)
+	}
+}
+
+#svg_animation {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+#svg_animation:hover {
+    animation-name: bounce;
+}
+
+.btn_order:hover {
+    color: #6D6F8C;
+    border: 1px solid #6D6F8C;
+    font-weight: 700;
+    letter-spacing: 3px;
+    background: none;
+    box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+}
+
+
+

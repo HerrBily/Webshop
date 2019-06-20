@@ -27,11 +27,11 @@
                 <input type="text" id="ccv" name="ccv">
             </div>
             <div class="form_item">
-                <label for="expires">Ablaufdatum</label>
+                <label for="expires">Expires</label>
                 <input type="text" id="expires" name="expires">
             </div>
             <div class="form_item">
-                <button type="submit">Speichern</button>
+                <button type="submit" class="btn_hover1">Save</button>
             </div>
     </form>
 <?php require_once __DIR__ . '/../../Partials/Footer.php'; ?>

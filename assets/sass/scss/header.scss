@@ -8,14 +8,16 @@ header {
 }
 
 nav {
-    padding-top: 1rem; 
+    padding-bottom: 1.5rem;
 
     ul {
         align-items: center;
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
-        width: 60%;
+        width: 50%;
+        padding-top: 2rem;
+        height: 5rem;
     }
 
     .admin {
@@ -48,6 +50,9 @@ nav {
 
 #logo {
     width: 140px;
+    position: absolute;
+    top: 1rem;
+    left: 6rem;
 }
 
 #svg_animation {
@@ -62,5 +67,8 @@ nav {
     transition: all 0.3s ease-out;
     width: 100%;
 }
+
+
+
 
 

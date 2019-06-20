@@ -9,7 +9,7 @@
                         <div class="item_section">
                             <h3><?php echo $product->name; ?> - <?php echo $product->price ?> €</h3>
                             <p><?php echo $product->description; ?></p>
-                            <a href="products/show/<?php echo $product->id; ?>">more</a>
+                            <a href="products/show/<?php echo $product->id; ?>" class="btn_hover1">more</a>
                         </div>
                         <img src="<?php echo $base; ?>assets/<?php echo $product->images[0]; ?>">
                     </div>

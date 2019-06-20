@@ -48,6 +48,6 @@
                         <?php endforeach; ?>
                     </select>
                 </div>
-                    <button type="submit">Save</button>
+                    <button type="submit" class="btn_hover1">Save</button>
             </form>
 <?php require_once __DIR__ . '/../../Partials/Footer.php'; ?>

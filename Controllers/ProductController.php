@@ -11,7 +11,7 @@ class ProductController {
         $params = [
             'product' => $product
         ];
-
+        
         View::load('product.detail', $params);
     }
 

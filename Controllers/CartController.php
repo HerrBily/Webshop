@@ -20,6 +20,7 @@ class CartController
         }
         $total = round($total, 2);
         $totalall = $total + $shipping;
+        $totalall = round($totalall, 2);
 
         $params = [
             'products' => $products,
@@ -27,6 +28,8 @@ class CartController
             'totalall' => $totalall,
             'shipping' => $shipping
         ];
+
+        $_SESSION['total_price'] = $totalall;
 
         View::load('cart', $params);
     }

@@ -27,6 +27,10 @@ class Order
         return $this; // <-- haben wir überall anders noch nicht gemacht :D
     }
 
+    public function getProductsArray () {
+        return json_decode($this->products);
+    }
+
     public static function fillMultiple (array $dbResult)
     {
         $orders = [];

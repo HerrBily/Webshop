@@ -20,7 +20,7 @@ class Cart
     }
 
     public function updateQuantity ($product_id, $new_quantity = 1) {
-
+        $this->products[$product_id] = $new_quantity;
     }
 
     public function mergeCarts () {
