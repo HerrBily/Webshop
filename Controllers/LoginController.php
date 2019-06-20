@@ -90,7 +90,7 @@ class LoginController
 
             if ($password !== $password_repeat) {
                 $params = [
-                    'error' => 'Du Depp! Gib das richtige Passwort an!'
+                    'error' => 'Please enter the right password!'
                 ];
                 View::load('signup', $params); return;
             }

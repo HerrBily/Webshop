@@ -46,13 +46,15 @@
                     <a class="nav_link" href="admin/products">Products</a>
                 </li>
                 <li>
-                    <a class="nav_link" href="admin/users">User</a>
+                    <a class="nav_link" href="admin/users">Users</a>
                 </li>
-            </ul>
+                <li>
+                    <a class="nav_link" href="admin/orders">Orders</a>
+                </li>
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
-                    <div class="logout">
-                        <p>Hallo, <?php echo LoginController::getEmailFromSession(); ?></p>
-                        <a href="<?php echo $base; ?>logout" class="nav_link">Logout</a>
-                    </div>
+                <li>
+                    <a href="<?php echo $base; ?>logout" class="nav_link">Logout</a>
+                </li>
                 <?php endif; ?>
+            </ul>
         </nav>

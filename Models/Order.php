@@ -10,6 +10,7 @@ class Order
     public $crdate;
     public $products;
     public $status = 'open';
+    public $deleted = 0;
 
     public function fill ($dbResult)
     {
@@ -21,43 +22,41 @@ class Order
         $this->crdate = $dbResult['crdate'];
         $this->products = $dbResult['products'];
         $this->status = $dbResult['status'];
+        $this->deleted = $dbResult['deleted'];
 
         return $this; // <-- haben wir überall anders noch nicht gemacht :D
     }
 
-    public function getProductsArray () {
-        return json_decode($this->products);
+    public static function fillMultiple (array $dbResult)
+    {
+        $orders = [];
+
+        foreach ($dbResult as $order) {
+            $o = new Order();
+            $o->fill($order);
+
+            $orders[] = $o;
+        }
+
+        return $orders;
     }
 
-    public function save ()
+    public static function all ()
     {
         $db = new DB();
 
-        if (isset($this->id) && !empty($this->id)) {
-            $db->query("UPDATE orders SET total_price=?, delivery_address_id=?, payment_id=?, user_id=?, products=?, status=? WHERE id = ?", [
-                'd:total_price' => $this->total_price,
-                'i:delivery_address_id' => $this->delivery_address_id,
-                'i:payment_id' => $this->payment_id,
-                'i:user_id' => $this->user_id,
-                's:products' => $this->products,
-                's:status' => $this->status,
-                'i:id' => $this->id
-            ]);
-        } else {
-            $db->query("INSERT INTO orders SET total_price=?, delivery_address_id=?, payment_id=?, user_id=?, products=?, status=?", [
-                'd:total_price' => $this->total_price,
-                'i:delivery_address_id' => $this->delivery_address_id,
-                'i:payment_id' => $this->payment_id,
-                'i:user_id' => $this->user_id,
-                's:products' => $this->products,
-                's:status' => $this->status
-            ]);
-            $result = $db->query("SELECT * FROM orders ORDER BY id DESC LIMIT 1");
-            $this->fill($result[0]);
-        }
-        return $this;
+        $result = $db->query('SELECT * FROM orders WHERE deleted != TRUE');
+        return self::fillMultiple($result);
     }
 
+    /**
+     * Einzelnes Model (Product) abfragen
+     *
+     * @param int $id
+     *
+     * @return Product
+     */
+  
     public static function find (int $id)
     {
         $db = new DB();
@@ -70,5 +69,46 @@ class Order
         $o->fill($result[0]);
 
         return $o;
+    }
+
+    public static function getByIds (array $ids)
+    {
+        $db = new DB();
+
+        $ids = implode(',', $ids);
+
+        $result = $db->query("SELECT * FROM orders WHERE id IN ({$ids})", []);  // <-- quick und dirty!
+
+        return self::fillMultiple($result);
+    }
+
+    public function save ()
+    {
+        $db = new DB();
+
+        if (isset($this->id) && !empty($this->id)) {
+            $db->query("UPDATE orders SET total_price=?, delivery_address_id=?, payment_id=?, user_id=?, products=?, status=?, deleted=? WHERE id = ?", [
+                'd:total_price' => $this->total_price,
+                'i:delivery_address_id' => $this->delivery_address_id,
+                'i:payment_id' => $this->payment_id,
+                'i:user_id' => $this->user_id,
+                's:products' => $this->products,
+                's:status' => $this->status,
+                'i:deleted' => $this->deleted,
+                'i:id' => $this->id
+            ]);
+        } else {
+            $db->query("INSERT INTO orders SET total_price=?, delivery_address_id=?, payment_id=?, user_id=?, products=?, status=?, deleted=0", [
+                'd:total_price' => $this->total_price,
+                'i:delivery_address_id' => $this->delivery_address_id,
+                'i:payment_id' => $this->payment_id,
+                'i:user_id' => $this->user_id,
+                's:products' => $this->products,
+                's:status' => $this->status
+            ]);
+            $result = $db->query("SELECT * FROM orders ORDER BY id DESC LIMIT 1");
+            $this->fill($result[0]);
+        }
+        return $this;
     }
 }

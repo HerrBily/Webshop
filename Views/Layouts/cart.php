@@ -5,7 +5,7 @@
         <h2 class="cart_header">Shopping Cart</h2>
 
         <?php if (empty($products)): ?>
-            <p class="has-danger">Oh noooo :( Warenkorb leer!</p>
+            <h2 class="cart_empty">Cart empty!</br> It's never too early for Gin o'clock.</h2>
         <?php else: ?>
         <section class="cart_main">
                 <table class="cart_list">
@@ -20,7 +20,7 @@
                     <?php foreach ($products as $product) : ?>
                     <tr>
                     <td class="item_left">
-                    <img src="<?php echo $base; ?>assets/<?php echo $product->image_small[0]; ?>">
+                    <img src="<?php echo $base; ?>assets/<?php echo $product->images[0]; ?>">
                     <td class="item_left">
                         <?php echo $product->name; ?>
                     </td>

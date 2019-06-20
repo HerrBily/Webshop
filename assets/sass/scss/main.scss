@@ -179,6 +179,14 @@
 */
 .cart_cart {
     min-height: calc(100vh - 20rem);
+
+    .cart_empty {
+        color: #6D6F8C;
+        font-family: 'PT Mono', sans-serif;
+        text-align: center;
+        line-height: 5rem;
+        padding-top: 5rem;
+    }
 }
 
 .cart_header {
@@ -207,7 +215,7 @@
         }
         
         img {
-            //width: 100%;
+            width: 10rem;
             padding: 0.5rem 0;
         }
         
@@ -337,7 +345,45 @@
 }
 
 /*
-    ADDRESS FORMULAR
+    SIGN UP FORMULAR
+*/
+
+.signup_header {
+    text-align: center;
+    padding: 2rem 0;
+    color: #6D6F8C;
+}
+
+.error{
+    color: red;
+    text-align: center;
+} 
+
+.signup_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 60%;
+    padding-bottom: 2rem;
+
+    label {
+        color: rgb(172, 170, 170);
+        padding-top: 2rem; 
+    }
+
+    input {
+        border: none;
+        border-bottom: 1px solid #6D6F8C;
+        background-color: #fff;
+        padding: 1rem 0 0.2rem 0.5rem;
+        width: 15rem;
+        margin: 1rem 0;
+    } 
+}
+
+/*
+    ADDRESS FORMULAR & PAY FORMULAR
 */
 
 .address_main {
@@ -367,15 +413,162 @@
 }
 
 /*
+    SUMMARY
+*/
+
+.summary_main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 60%;
+    padding: 2rem 0;
+
+    .order_summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 0;
+        border-bottom: 1px solid #ddd;
+
+        .container_img {
+            display: flex;
+            align-items: center;
+
+            p,
+            span {
+                padding-left: 2rem;
+            }
+        }
+    }
+    
+    .price_summary {
+        padding: 2rem 0;
+
+        .price_item {
+            display: flex;
+            justify-content: flex-end;
+    
+            .flex_base {
+                flex-basis: 50%;
+                text-align: right;
+            }
+        }
+
+        .price_item:nth-child(2) {
+            padding: 2rem 0;
+        }
+
+        .price_item:last-child {
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+            border-width: 50%;
+
+            span {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .information {
+        display: flex;
+        padding: 2rem 0;
+
+        .shipping_summary,
+        .payment_summary {
+            flex-basis: 50%;
+
+            h2 {
+                padding-bottom: 1.5rem;
+            }
+
+            p {
+                padding-bottom: 1rem;
+            }
+        }
+
+    }
+
+    a {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #6D6F8C;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        padding: 0.7rem;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+    
+}
+
+/*
+    THANK YOU
+*/
+
+.thanks_thanks {
+    text-align: center;
+
+    h2 {
+        padding: 2rem 0;
+        font-family: 'PT Mono', sans-serif;
+    }
+
+    .thanks {
+
+        img {
+            width: 100vw;
+            height: 70vh;
+        }
+    }   
+}
+
+
+/*
     ADMIN
 */
 
 .admin_admin {
     min-height: calc(100vh - 20rem);
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+
+    .admin_header {
+        flex-basis: 50%;
+        text-align: center;
+
+        h2 {
+            color: #6D6F8C;
+            font-size: 2.5rem;
+            font-family: 'PT Mono', sans-serif;
+            padding-bottom: 2.5rem;
+        }
+
+        .admin_svg {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        svg {
+            width: 50px;
+            height: 50px;
+        }
+        
+    }
+
+    .admin_img {
+        flex-basis: 50%;
+
+        img {
+            width: 50vw;
+        }
+    }
+
 }
 
 /*
-    ADMIN LIST
+    PRODUCTS LIST
 */
 
 .admin_list {
@@ -383,7 +576,7 @@
     width: 80%;
     padding-top: 3rem;
 
-    .add_product {
+    h3 {
         text-align: center;
     }
 
@@ -412,6 +605,10 @@
             justify-content: space-between;
             padding: 1rem 0;
 
+            img {
+                width: 10rem;
+            }
+
             p {
                 font-size: 1.2rem;
             }
@@ -427,4 +624,116 @@
             }
         }
     }
+}
+
+/*
+    PRODUCT EDIT & PRODUCT ADD
+*/
+
+
+.edit_add_header {
+    padding: 2rem 0;
+    text-align: center;
+}
+.edit_add_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 60%;
+    padding: 2rem 0;
+
+    label {
+        padding: 1rem 0;
+    }
+
+    input {
+        border: none;
+        border-bottom: 1px solid #6D6F8C;
+        background-color: #fff;
+        padding: 0.3rem 0 0.2rem 0.5rem;
+        width: 15rem;
+    }
+
+    textarea {
+        width: 15rem;
+    }
+
+    .img_save {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding-bottom: 1.5rem;
+
+        input {
+            width: 22rem;
+            border: none;
+        }
+    }
+
+    .img_delete {
+        display: flex;
+        flex-direction: column;
+
+        .input_delete {
+            display: flex;
+            justify-content: space-evenly;
+
+            input {
+                width: 1rem;
+            }
+        }
+
+    }
+
+    
+}
+
+/*
+    USERS LIST
+*/
+
+.user_user {
+    min-height: calc(100vh - 20rem);
+}
+
+/*
+    ORDER LIST
+*/
+
+.order_order {
+    min-height: calc(100vh - 20rem);
+
+    h3 {
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .order_main {
+    
+        .order_list {
+            font-family: 'Open Sans', sans-serif;
+            width: 90%;
+            margin: 0 auto;
+            
+            th,
+            td {
+                text-align: center;
+                padding: 1rem 0;
+            }
+    
+            th {
+                font-size: 1.2rem;
+                color: #6D6F8C;
+                border-bottom: 1px solid #ddd;
+            }
+            
+            td {
+                vertical-align: middle;
+                text-align: center;
+                border-bottom: 1px solid #ddd;
+            }
+        }
+    }
+
 }

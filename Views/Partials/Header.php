@@ -9,11 +9,12 @@
     <base href="<?php echo $base; ?>">
     <link rel="stylesheet" href="<?php echo $base; ?>assets/sass/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Mono&display=swap" rel="stylesheet">
+    <script src="<?php echo $base; ?>assets/js/general.js"></script>
 </head>
 
 <body>
     <header>
-        <nav>
+        <nav class="nav-sticky">
             <ul class="nav_list">
                 <li>
                     <a href="<?php echo $base; ?>" class="nav_link">
@@ -55,11 +56,16 @@
                         <a href="login" class="nav_link">Login</a>
                     </li>
                 <?php endif; ?>
-                <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] === true): ?>
+                <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
                 <li>
-                    <a href="admin" class="nav_link">Admin</a>
+                    <a href="<?php echo $base; ?>logout" class="nav_link">Logout</a>
                 </li>
-            <?php endif; ?>
+                <?php endif; ?>
+                <?php if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true): ?>
+                <li>
+                    <a class="nav_link" id="sign_up" href="signup">Sign Up</a>
+                </li>
+                <?php endif; ?>
                 <li>
                     <a href="cart" class="nav_link">
                         <svg id="svg_animation" height="512pt" viewBox="0 -31 512 512" width="512pt"
@@ -73,10 +79,14 @@
                     </a>
                 </li>
             </ul>
-            <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
-                <div class="logout">
-                    <p>Hallo, <?php echo LoginController::getEmailFromSession(); ?></p>
-                    <a href="<?php echo $base; ?>logout" class="nav_link">Logout</a>
+
+            <!-- <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+            <p>Hallo, <?php echo LoginController::getEmailFromSession(); ?></p>
+            <?php endif; ?> -->
+
+            <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] === true): ?>
+                <div class="admin">
+                    <a href="admin" class="nav_link">Admin</a>  
                 </div>
             <?php endif; ?>
         </nav>

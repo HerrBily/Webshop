@@ -18,6 +18,8 @@ $routes = [
     "/cart" => "CartController.list",
     "/cart/add/:id" => "CartController.addProduct",
     "/cart/remove/:id" => "CartController.removeProduct",
+    "/cart/increment/:id" => "CartController.incrementProduct",
+    "/cart/decrement/:id" => "CartController.decrementProduct",
 
     "/login" => "LoginController.loginForm",
     "/logout" => "LoginController.logout",
@@ -30,6 +32,16 @@ $routes = [
     "/admin/products/update/:id" => "ProductController.updateProduct",
     "/admin/products/add" => "ProductController.addForm",
     "/admin/products/delete/:id" => "ProductController.delete",
+
+    "/admin/users" => "UserController.adminList",
+    "/admin/users/edit/:id" => "UserController.editForm",
+    "/admin/users/update/:id" => "UserController.updateUser",
+    "/admin/users/delete/:id" => "UserController.delete",
+
+    "/admin/orders" => "OrderController.adminList",
+    "/admin/orders/edit/:id" => "OrderController.editForm",
+    "/admin/orders/update/:id" => "OrderController.updateOrder",
+    "/admin/orders/delete/:id" => "OrderController.delete",
 
     "/checkout/address" => "CheckoutController.addAddress",
     "/checkout/payment/:id" => "CheckoutController.addPayment",

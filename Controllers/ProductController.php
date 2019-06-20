@@ -65,14 +65,16 @@ class ProductController {
 
         $product = $this->handleFileUpload($product);
 
+        
         $product->save();
+        
 
         header("Location: " . APP_BASE . "admin/products/edit/$id");
         exit;
     }
 
     private function handleFileUpload (Product $product) {
-        $uploadDir = __DIR__ . '/../Assets/product_images/';
+        $uploadDir = __DIR__ . '/../assets/product_images/';
 
         foreach ($_FILES['images']['tmp_name'] as $key => $tmp_name) {
             $mimeType = $_FILES['images']['type'][$key];

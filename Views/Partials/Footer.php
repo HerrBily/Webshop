@@ -13,9 +13,16 @@
                 <li>
                     <a href="#" class="footer_link">About Us</a>
                 </li>
+                <?php if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true): ?>
+                    <li>
+                        <a href="login" class="footer_link">Login</a>
+                    </li>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
                 <li>
-                    <a href="login" class="footer_link">Login</a>
+                    <a href="<?php echo $base; ?>logout" class="footer_link">Logout</a>
                 </li>
+            <?php endif; ?>
             </ul>
             <section class="social_media_section">
                 <p>Follow us</p>
@@ -49,10 +56,6 @@
                         </svg>
                     </li>
                 </ul>
-                <section class="newsletter">
-                    <label for="email">Sign in for our Newsletter</label>
-                    <input type="email" name="email" id="email">
-                </section>
             </section>
         </section>
     </footer>

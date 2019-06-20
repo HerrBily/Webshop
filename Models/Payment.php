@@ -47,7 +47,7 @@ class Payment
                 'i:id' => $this->id
             ]);
         } else {
-            $db->query("INSERT INTO payments SET NAME=?, number=?, expires=?, ccv=?, user_id=?", [
+            $db->query("INSERT INTO payments SET name=?, number=?, expires=?, ccv=?, user_id=?", [
                 's:name' => $this->name,
                 'i:number' => $this->number,
                 's:expires' => $this->expires,

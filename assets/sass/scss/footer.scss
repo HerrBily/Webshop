@@ -17,6 +17,7 @@ footer {
     display: flex;
     justify-content: space-between;
     padding-top: 4rem;
+    align-items: center;
 
     img {
         width: 9rem;
@@ -31,8 +32,7 @@ footer {
 }
 
 .social_media_section {
-    display: flex;
-    flex-direction: column;
+    
 
     p {
         padding-bottom: 1rem;
@@ -40,7 +40,6 @@ footer {
 
     ul {
         display: flex;
-        padding-bottom: 1rem;
         justify-content: space-between;
 
         svg {
@@ -50,23 +49,23 @@ footer {
     }
 }
 
-.newsletter {
-    display: flex;
-    flex-direction: column;
+// .newsletter {
+//     display: flex;
+//     flex-direction: column;
 
-    label {
-        color: #fff;
-        padding-bottom: 1rem;
-        font-family: 'Open Sans', sans-serif;
-    }
+//     label {
+//         color: #fff;
+//         padding-bottom: 1rem;
+//         font-family: 'Open Sans', sans-serif;
+//     }
 
-    input {
-        background-color: #979797;
-        border-radius: 10%;
-        color: #fff;
-        width: 12rem;
-        height: 1.5rem;
-        font-size: 1rem;
-        font-family: 'Open Sans', sans-serif;
-    }
-}
+//     input {
+//         background-color: #fff;
+//         border-radius: 0.5rem;
+//         color: #000;
+//         width: 12rem;
+//         height: 1.5rem;
+//         font-size: 1rem;
+//         font-family: 'Open Sans', sans-serif;
+//     }
+// }

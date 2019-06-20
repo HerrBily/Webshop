@@ -22,15 +22,15 @@
                 </div>
                 <div class="form_item">
                     <label for="street">Straße:</label>
-                    <input type="text" id="street" name="street" required>
+                    <input type="text" id="street" name="street">
                 </div>
                 <div class="form_item">
                     <label for="streetNr">Hausnummer:</label>
-                    <input type="text" id="streetNr" name="streetNr" required>
+                    <input type="text" id="streetNr" name="streetNr">
                 </div>
                 <div class="form_item">
                     <label for="door">Türnummer:</label>
-                    <input type="text" id="door" name="door" required>
+                    <input type="text" id="door" name="door">
                 </div>
                 <div class="form_item">
                     <label for="zip">PLZ:</label>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="form_item">
                     <label for="city">Stadt:</label>
-                    <input type="text" id="city" name="city" required>
+                    <input type="text" id="city" name="city">
                 </div>
                 <div class="form_item">
                     <label class="select_label" for="country">Land:</label>
@@ -48,6 +48,6 @@
                         <?php endforeach; ?>
                     </select>
                 </div>
-                    <button type="submit">Speichern</button>
+                    <button type="submit">Save</button>
             </form>
 <?php require_once __DIR__ . '/../../Partials/Footer.php'; ?>

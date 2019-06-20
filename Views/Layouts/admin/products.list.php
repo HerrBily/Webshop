@@ -7,7 +7,7 @@
     <div class="admin_item">
         <?php foreach ($products as $product) : ?>
             <div class="admin_container">
-                <img src="<?php echo $base; ?>assets/<?php echo $product->image_small[0]; ?>">
+                <img src="<?php echo $base; ?>assets/<?php echo $product->images[0]; ?>">
                 <p>
                     <?php echo $product->name; ?>
                 </p>

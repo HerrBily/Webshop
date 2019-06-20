@@ -43,8 +43,8 @@ class CheckoutController
                 $new_address->zip = trim($_POST['zip']);
                 $new_address->city = trim($_POST['city']);
                 $new_address->country = trim($country);
-                $new_address->name = trim($_POST['name']);
                 $new_address->user_id = $_SESSION['user_id'];
+                $new_address->name = trim($_POST['name']);
                 $new_address->save();
 
                 // adresse zu order speichern
@@ -75,6 +75,7 @@ class CheckoutController
         if (isset($_POST['existing_payment'])) {
             if ($_POST['existing_payment'] !== 'default') {
                 $order->payment_id = $_POST['existing_payment'];
+
             } else {
                 // validieren: s. CheckoutController->addAddress()
 
@@ -84,8 +85,9 @@ class CheckoutController
                 $payment->number = (int)$_POST['number'];
                 $payment->expires = trim($_POST['expires']);
                 $payment->ccv = (int)$_POST['ccv'];
-                $payment->user_id = (int)$_POST['user_id'];
+                $payment->user_id = $_SESSION['user_id'];
                 $payment->save();
+
 
                 // adresse zu order speichern
                 $order->payment_id = $payment->id;
@@ -113,6 +115,7 @@ class CheckoutController
         $order = Order::find($order_id);
         $address = Address::find($order->delivery_address_id);
         $payment = Payment::find($order->payment_id);
+        $shipping = 9;
         $products = [];
 
         $total_price = 0;
@@ -123,6 +126,7 @@ class CheckoutController
 
             $subtotal = $product->price * $amount;
             $total_price = $total_price + $subtotal;
+            $total = $total_price + $shipping;
         }
 
         $params = [
@@ -130,7 +134,9 @@ class CheckoutController
             'address' => $address,
             'payment' => $payment,
             'products' => $products,
-            'total_price' => $total_price
+            'total_price' => $total_price,
+            'shipping' => $shipping,
+            'total' => $total
         ];
 
         View::load('checkout/summary', $params);

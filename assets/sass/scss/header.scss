@@ -4,6 +4,7 @@
 
 header {
     background-color: #6D6F8C;
+    position: relative;
 }
 
 nav {
@@ -14,20 +15,33 @@ nav {
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
-        width: 50%;
+        width: 60%;
     }
 
-    .logout {
-        text-align: right;
-        padding: 1rem 1rem 0.5rem 0;
+    .admin {
+        position: absolute;
+        top: 2.5rem;
+        right: 2rem;
 
         p { 
             color: #fff;
         }
 
         a {
-            border-bottom: 1px solid #fff;
+            color: #6D6F8C;
+            background-color: #fff;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            padding: 0.5rem;
         }
+    }
+
+    #sign_up {
+        color: #6D6F8C;
+        background-color: #fff;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        padding: 0.5rem;
     }
 
 }
@@ -40,4 +54,13 @@ nav {
     width: 30px;
     height: 30px;
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    background-color: #6D6F8C;
+    transition: all 0.3s ease-out;
+    width: 100%;
+}
+
 
