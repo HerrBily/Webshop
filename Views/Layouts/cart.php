@@ -64,7 +64,7 @@
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true): ?>
                     <a href="checkout/address" class="btn_hover1">checkout</a>
                 <?php else: ?>
-                    <a href="login">checkout</a>
+                    <a href="login" class="btn_hover1">checkout</a>
                 <?php endif; ?>
             </section>
         </section>

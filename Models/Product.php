@@ -1,7 +1,8 @@
 <?php
-
+// Hier wird die class PRODUCT angelegt.
 class Product
 {
+// werden die variablen public gesetzt.
     public $id;
     public $name;
     public $price;
@@ -9,7 +10,7 @@ class Product
     public $description;
     public $images = [];
     public $deleted = 0;
-
+// Bei dieser Funktion werden die Variablen mit den richtigen Arrays befüllt und in eine Variable gespeichert.
     public function fill ($dbResult)
     {
         $this->id = $dbResult['id'];
@@ -20,7 +21,7 @@ class Product
         $this->deleted = $dbResult['deleted'];
         $this->images = explode(',', $dbResult['images']);
     }
-
+// Die Funktion befüllt mehrere. 
     public static function fillMultiple (array $dbResult)
     {
         $products = [];
@@ -34,7 +35,7 @@ class Product
 
         return $products;
     }
-
+// Bei dieser Funktion werden alles aus der products Tabelle genommen.
     public static function all ()
     {
         $db = new DB();
@@ -50,6 +51,8 @@ class Product
      *
      * @return Product
      */
+
+// Die FIND Funktion sucht die ID von der Datenbanktabelle products.
     public static function find (int $id)
     {
         $db = new DB();
@@ -63,7 +66,7 @@ class Product
 
         return $p;
     }
-
+// Hier werden alle ids gesucht.
     public static function getByIds (array $ids)
     {
         $db = new DB();
@@ -74,7 +77,7 @@ class Product
 
         return self::fillMultiple($result);
     }
-
+// Bei dieser Funktion wird gespeichert oder ein Update wird asugeführt.
     public function save ()
     {
         $db = new DB();

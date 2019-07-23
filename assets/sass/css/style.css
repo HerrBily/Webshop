@@ -334,6 +334,7 @@ nav #sign_up {
   border-radius: 10%;
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
+  box-shadow: 0px 24px 35px 1px rgba(0, 0, 0, 0.75);
 }
 
 /*
@@ -693,10 +694,22 @@ nav #sign_up {
 */
 .thanks_thanks {
   text-align: center;
+  padding-bottom: 2rem;
 }
 .thanks_thanks h2 {
   padding: 2rem 0;
   font-family: "PT Mono", sans-serif;
+}
+.thanks_thanks a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #6D6F8C;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  padding: 0.7rem 2rem;
+  margin: 0 auto;
+  text-transform: uppercase;
 }
 .thanks_thanks .thanks img {
   width: 100vw;
@@ -889,7 +902,7 @@ footer p {
 
 .footer_section {
   margin: 0 auto;
-  width: 55%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
   padding-top: 4rem;
@@ -912,10 +925,12 @@ footer p {
 .social_media_section ul {
   display: flex;
   justify-content: space-between;
+  width: 8rem;
 }
 .social_media_section ul svg {
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 
 @media (min-width: 320px) and (max-width: 900px) {

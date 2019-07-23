@@ -1,14 +1,15 @@
 <?php
-
+// Hier wird die class PAYMENT angelegt.
 class Payment
 {
+// werden die variablen public gesetzt.
     public $id;
     public $name;
     public $number;
     public $expires;
     public $ccv;
     public $user_id;
-
+// Bei dieser Funktion werden die Variablen mit den richtigen Arrays befüllt und in eine Variable gespeichert.
     public function fill ($dbResult)
     {
         $this->id = $dbResult['id'];
@@ -18,7 +19,7 @@ class Payment
         $this->ccv = $dbResult['ccv'];
         $this->user_id = $dbResult['user_id'];
     }
-
+// Die Funktion befüllt mehrere. 
     public static function fillMultiple (array $dbResult)
     {
         $payments = [];
@@ -32,7 +33,7 @@ class Payment
 
         return $payments;
     }
-
+// Bei dieser Funktion wird gespeichert oder ein Update wird asugeführt.
     public function save ()
     {
         $db = new DB();
@@ -59,7 +60,7 @@ class Payment
         }
         return $this;
     }
-
+// Hier wird die user_id gesucht.
     public static function findByUser ($user_id)
     {
         $user_id = (int)$user_id;
@@ -71,7 +72,7 @@ class Payment
 
         return self::fillMultiple($result);
     }
-
+// Die FIND Funktion sucht die ID von der Datenbank tabelle payments.
     public static function find (int $id)
     {
         $db = new DB();

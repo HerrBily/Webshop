@@ -1,7 +1,8 @@
 <?php
-
+// Hier wird die class ADDRESS angelegt.
 class Address
 {
+// werden die variablen public gesetzt.
     public $id;
     public $street;
     public $streetNr;
@@ -11,7 +12,7 @@ class Address
     public $country;
     public $name;
     public $user_id;
-
+// Bei dieser Funktion werden die Variablen mit den richtigen Arrays befüllt und in eine Variable gespeichert.
     public function fill ($dbResult)
     {
         $this->id = $dbResult['id'];
@@ -24,7 +25,7 @@ class Address
         $this->name = $dbResult['name'];
         $this->user_id = $dbResult['user_id'];
     }
-
+// Die Funktion befüllt mehrere. 
     public static function fillMultiple (array $dbResult)
     {
         $addresses = [];
@@ -38,7 +39,7 @@ class Address
 
         return $addresses;
     }
-
+// Die FIND Funktion sucht die ID von der Datenbank tabelle adress.
     public static function find (int $id)
     {
         $db = new DB();
@@ -52,7 +53,7 @@ class Address
 
         return $a;
     }
-
+// Bei dieser Funktion wird gespeichert oder ein Update wird asugeführt.
     public function save ()
     {
         $db = new DB();
@@ -84,7 +85,7 @@ class Address
             $this->fill($result[0]);
         }
     }
-
+// Hier wird die user_id gesucht.
     public static function findByUser (int $user_id)
     {
         $db = new DB();

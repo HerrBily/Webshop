@@ -1,13 +1,14 @@
 <?php
-
+// Hier wird die class USER angelegt.
 class User
 {
+// werden die variablen public gesetzt.
     public $id;
     public $name;
     public $email;
     private $password_hash;
     public $deleted = false;
-
+// Bei dieser Funktion werden die Variablen mit den richtigen Arrays befüllt und in eine Variable gespeichert.
     public function fill ($dbResult)
     {
         $this->id = $dbResult['id'];
@@ -16,7 +17,7 @@ class User
         $this->password_hash = $dbResult['password'];
         $this->deleted = (bool)$dbResult['deleted'];
     }
-
+// Die Funktion befüllt mehrere. 
     public static function fillMultiple (array $dbResult)
     {
         $users = [];
@@ -30,7 +31,7 @@ class User
 
         return $users;
     }
-
+// Bei dieser Funktion werden alles aus der users Tabelle genommen.
     public static function all ()
     {
         $db = new DB();
@@ -38,7 +39,7 @@ class User
         $result = $db->query('SELECT * FROM users WHERE deleted != TRUE');
         return self::fillMultiple($result);
     }
-
+// wird die email gesucht.
     public static function findByEmail (string $email)
     {
         $db = new DB();
@@ -55,13 +56,13 @@ class User
         $user->fill($result[0]);
         return $user;
     }
-
+// wird das passwort geprüft
     public function checkPassword (string $password)
     {
         $password = trim($password);
         return password_verify($password, $this->password_hash);
     }
-
+// wenn ein User sich anmeldet wird ein password_hash gesetzt in der Datenbank.
     public function setPassword (string $password)
     {
         $password = trim($password);
@@ -75,6 +76,8 @@ class User
      *
      * @return User
      */
+
+// Die FIND Funktion sucht die ID von der Datenbanktabelle users.
     public static function find (int $id)
     {
         $db = new DB();
@@ -88,7 +91,7 @@ class User
 
         return $user;
     }
-
+// Bei dieser Funktion wird gespeichert oder ein Update wird asugeführt.
     public function save ()
     {
         $db = new DB();

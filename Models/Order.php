@@ -1,7 +1,8 @@
 <?php
-
+// Hier wird die class ORDER angelegt.
 class Order
 {
+// werden die variablen public gesetzt.
     public $id;
     public $total_price;
     public $delivery_address_id;
@@ -11,7 +12,7 @@ class Order
     public $products;
     public $status = 'open';
     public $deleted = 0;
-
+// Bei dieser Funktion werden die Variablen mit den richtigen Arrays befüllt und in eine Variable gespeichert.
     public function fill ($dbResult)
     {
         $this->id = $dbResult['id'];
@@ -30,7 +31,7 @@ class Order
     public function getProductsArray () {
         return json_decode($this->products);
     }
-
+// Die Funktion befüllt mehrere. 
     public static function fillMultiple (array $dbResult)
     {
         $orders = [];
@@ -44,7 +45,7 @@ class Order
 
         return $orders;
     }
-
+// Bei dieser Funktion werden alles aus der orders Tabelle genommen.
     public static function all ()
     {
         $db = new DB();
@@ -61,6 +62,7 @@ class Order
      * @return Product
      */
   
+// Die FIND Funktion sucht die ID von der Datenbanktabelle orders.
     public static function find (int $id)
     {
         $db = new DB();
@@ -74,7 +76,7 @@ class Order
 
         return $o;
     }
-
+// Hier werden alle ids gesucht.
     public static function getByIds (array $ids)
     {
         $db = new DB();
@@ -85,7 +87,7 @@ class Order
 
         return self::fillMultiple($result);
     }
-
+// Bei dieser Funktion wird gespeichert oder ein Update wird asugeführt.
     public function save ()
     {
         $db = new DB();
